@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 // query karyawan berdasarkan id
 $karyawan = query("SELECT * FROM karyawan WHERE id = $id");
-var_dump($karyawan);
+
 ?>
 
 <!DOCTYPE html>
