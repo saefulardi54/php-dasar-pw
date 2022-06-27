@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+// jika variabel login(session) ada maka lanjut login
+if (!isset($_SESSION['login'])) {
+  header("location: login.php");
+  exit;
+}
+
 require 'functions.php';
 
 $karyawan = query("SELECT * FROM karyawan");
@@ -20,6 +28,7 @@ if (isset($_POST['cari'])) {
     <title>Daftar Karyawan</title>
   </head>
   <body>
+    <a href="logout.php">Logout</a>
     <h1>Daftar Karyawan</h1>
 
     <a href="tambah.php">Tambah Data Karyawan</a>
